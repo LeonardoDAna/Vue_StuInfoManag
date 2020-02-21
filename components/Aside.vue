@@ -5,13 +5,13 @@
         <template slot="title"><i class="el-icon-message"></i>导航一</template>
         <el-menu-item-group style="padding:0">
             <router-link to="/StusPage" tag="el-menu-item">
-                <el-menu-item>StudentsInformation</el-menu-item>
+                StudentsInformation
             </router-link>
             <router-link to="/testOne" tag="el-menu-item">
-                <el-menu-item>黑</el-menu-item>
+                <el-menu-item>我的题库</el-menu-item>
             </router-link>
             <router-link to="/testTwo" tag="el-menu-item">
-                <el-menu-item>红</el-menu-item>
+                <el-menu-item>生成题目</el-menu-item>
             </router-link>
         </el-menu-item-group>
         </el-submenu>

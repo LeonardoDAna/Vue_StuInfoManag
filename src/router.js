@@ -6,9 +6,11 @@ import testTwo from '../components/testTwo.vue'
 import AddStu_Info from '../components/AddStu_Info.vue'
 import EditStu_Info from '../components/EditStu_Info.vue'
 import Navbar from '../components/Navbar.vue'
+import Carousel from '../components/Carousel.vue'
 
 const router = new VueRouter({
     routes:[
+        {path:'/',component:Carousel},
         {path:'/Navbar',component:Navbar},
         {path:'/StusPage',component:Stuspage},
         {path:'/testOne',component:testOne},

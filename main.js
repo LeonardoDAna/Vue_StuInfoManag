@@ -23,6 +23,7 @@ import vueAxios from 'vue-axios'
 import qs from 'qs'
 Vue.prototype.$qs = qs ;
 Vue.use(ElementUI)
+import "./assets/animate"
 /**
  * 这样写可以全局使用
  * */

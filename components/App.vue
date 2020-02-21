@@ -14,7 +14,6 @@
         <!-- </el-scrollbar> v-if="isRouterAlive" -->
     <el-main>
         <router-view v-if="isRouterAlive" >
-          
         </router-view>
     </el-main>
   </el-container>
