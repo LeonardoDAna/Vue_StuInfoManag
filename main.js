@@ -21,6 +21,7 @@ import axios from 'axios'
 import vueAxios from 'vue-axios'
 // 导入 qs 这样我们就可以在axios post请求的时候将我们传递的数据转换成后台认识的格式
 import qs from 'qs'
+import store from './store'
 Vue.prototype.$qs = qs ;
 Vue.use(ElementUI)
 import "./assets/animate"
@@ -30,10 +31,22 @@ import "./assets/animate"
 Vue.use(vueAxios,axios)
 window.$ = $
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
 const xm = new Vue({
     el:'#app',
     render: h => h(app),
     router,
+    store
+})
+vue.mixin({
+    data(){
+        return{
+            DAN_XUAN_TI:1,
+            DUO_XUAN_TI:2,
+            PAN_DUAN_TI:3,
+            LUN_SHU_TI:0
+        }
+    }
 })
 window.xm = xm;
 //由于webpack 默认只能打包处理JS类型的文件

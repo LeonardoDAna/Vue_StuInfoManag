@@ -7,11 +7,11 @@
             <router-link to="/StusPage" tag="el-menu-item">
                 StudentsInformation
             </router-link>
-            <router-link to="/testOne" tag="el-menu-item">
+            <router-link to="/subjectList" tag="el-menu-item">
                 <el-menu-item>我的题库</el-menu-item>
             </router-link>
             <router-link to="/testTwo" tag="el-menu-item">
-                <el-menu-item>生成题目</el-menu-item>
+                <el-menu-item>试题车现有 <strong style="color:red">{{shopcount}}</strong> 题</el-menu-item>
             </router-link>
         </el-menu-item-group>
         </el-submenu>
@@ -20,6 +20,7 @@
 </template>
 <script>
 // 导入 eventBus 
+import {mapState,mapGetters} from 'vuex'
 export default {
     name:'Aside',
     data(){
@@ -31,7 +32,11 @@ export default {
         // this.isCheckedBox()
     },
     methods:{
-    }
+    },
+    computed:{
+                        ...mapState(['shopList']),
+                        ...mapGetters(['shopcount'])
+                    }
 }
 </script>
 <style lang="css">
