@@ -1,6 +1,10 @@
 <template>
   <div class="StusPage">
-      <el-button type="primary" @click="$router.push('AddStu_Info')" style="margin-top:10px;margin-bottom:35px;">添加学生</el-button>
+    <el-button
+      type="primary"
+      @click="$router.push('AddStu_Info')"
+      style="margin-top:10px;margin-bottom:35px;"
+    >添加学生</el-button>
     <div class="stu_tab">
       <el-table style="width: 100%" :data="userInfo">
         <el-table-column label="#" type="index"></el-table-column>

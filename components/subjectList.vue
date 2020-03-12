@@ -28,9 +28,9 @@
 <script>
 import { SUBJECT_TYPE } from "../config/index";
 import util from "../config/util";
-import {mapMutations} from 'vuex'
+import { mapMutations } from "vuex";
 export default {
-name: "subjectList",
+  name: "subjectList",
   data() {
     return {
       SUBJECT_TYPE: {
@@ -52,11 +52,11 @@ name: "subjectList",
         this.subject = result.data;
       });
     },
-    ...mapMutations(['add_shoplist'])
+    ...mapMutations(["add_shoplist"])
   },
   created() {
     this.getSubjectList();
-  },
+  }
 };
 </script>
 

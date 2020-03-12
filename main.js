@@ -9,7 +9,7 @@ import Vue from 'vue'
 // 导入 根组件
 import app from './components/App.vue'
 // 导入 element-ui
-import ElementUI from 'element-ui' 
+import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 // 配置路由
 import VueRouter from 'vue-router'
@@ -22,29 +22,29 @@ import vueAxios from 'vue-axios'
 // 导入 qs 这样我们就可以在axios post请求的时候将我们传递的数据转换成后台认识的格式
 import qs from 'qs'
 import store from './store'
-Vue.prototype.$qs = qs ;
+Vue.prototype.$qs = qs;
 Vue.use(ElementUI)
 import "./assets/animate"
 /**
  * 这样写可以全局使用
  * */
-Vue.use(vueAxios,axios)
+Vue.use(vueAxios, axios)
 window.$ = $
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 const xm = new Vue({
-    el:'#app',
+    el: '#app',
     render: h => h(app),
     router,
     store
 })
 vue.mixin({
-    data(){
-        return{
-            DAN_XUAN_TI:1,
-            DUO_XUAN_TI:2,
-            PAN_DUAN_TI:3,
-            LUN_SHU_TI:0
+    data() {
+        return {
+            DAN_XUAN_TI: 1,
+            DUO_XUAN_TI: 2,
+            PAN_DUAN_TI: 3,
+            LUN_SHU_TI: 0
         }
     }
 })
