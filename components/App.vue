@@ -1,110 +1,23 @@
 <template>
-  <div class="All">
-    <el-container>
-      <el-header class="header" style="padding:0">
-        <Navbar></Navbar>
-      </el-header>
-      <el-container>
-        <el-aside>
-          <Aside></Aside>
-        </el-aside>
-        <!-- </el-scrollbar> v-if="isRouterAlive" -->
-        <el-main>
-          <router-view v-if="isRouterAlive"></router-view>
-        </el-main>
-      </el-container>
-    </el-container>
+  <div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Navbar from "./Navbar.vue";
-import Aside from "./Aside.vue";
+import login from "./login/login.vue";
 export default {
   name: "App",
   components: {
-    Navbar,
-    Aside
-  },
-  provide() {
-    return {
-      reload: this.reload
-    };
+    login
   },
   data() {
     return {
-      a: "hello world!",
-      isRouterAlive: true
+      a: "hello world!"
     };
-  },
-  methods: {
-    reload() {
-      this.isRouterAlive = false;
-      this.$nextTick(function() {
-        this.isRouterAlive = true;
-      });
-    }
   }
 };
 </script>
-<style lang="css">
-.aside-component_scroll {
-  overflow-x: hidden;
-}
-.All {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  overflow:hidden;
-}
-.el-container {
-  height: 100%;
-}
-.el-header {
-  background-color: #545c64;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-  height: 100%;
-}
-.header {
-  padding: 0;
-}
 
-.el-aside {
-  background-color: #d3dce6;
-  color: #333;
-  text-align: center;
-  line-height: 200px;
-  /* height: 100%; */
-}
-
-.el-main {
-  background-color: #e9eef3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-  /* overflow-y: auto; */
-}
-
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
-}
-.el-main {
-  text-align: left;
-  line-height: 65px;
-}
-li {
-  padding: 0;
-}
+<style>
 </style>

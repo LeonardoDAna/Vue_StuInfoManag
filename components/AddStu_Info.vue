@@ -72,7 +72,7 @@ export default {
       goback:function(){
           console.log(this.$route.path);
           this.$router.push({
-              path:`/StusPage/`
+              path:`/home/StusPage/`
           })
       }
     }

@@ -93,7 +93,7 @@ export default {
   name: "testquestions",
   methods: {
     goback: function() {
-      this.$router.push("subjectList");
+      this.$router.push("home/subjectList");
     },
     submitList: function() {
       console.table(this.subject);

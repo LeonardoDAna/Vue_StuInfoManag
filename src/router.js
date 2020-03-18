@@ -9,19 +9,30 @@ import EditStu_Info from '../components/EditStu_Info.vue'
 import Navbar from '../components/Navbar.vue'
 import Carousel from '../components/Carousel.vue'
 import subjectList from '../components/subjectList.vue'
+import login from '../components/login/login.vue'
+import App from '../components/App.vue'
+import main from '../components/main/main.vue'
 
 
 const router = new VueRouter({
-    routes:[
-        {path:'/',component:Carousel},
-        {path:'/addsubject',component:addsubject},
-        {path:'/Navbar',component:Navbar},
-        {path:'/StusPage',component:Stuspage},
-        {path:'/subjectList',component:subjectList},
-        {path:'/testShop',component:testShop},
-        {path:'/AddStu_Info',component:AddStu_Info},
-        {path:'/EditStu_Info',component:EditStu_Info},
-        {name:'home',path:'/StusPage',component:Stuspage,redirect:'/StusPage'}
+    routes: [
+        { path: '/', component: login, meta: { islogin: false } },
+        {
+            path: '/home', component: main, meta: { islogin: true },
+            children: [
+                { path: '', component: Carousel, meta: { islogin: true } },
+                { path: 'addsubject', component: addsubject, meta: { islogin: true } },
+                { path: 'Navbar', component: Navbar, meta: { islogin: true } },
+                { path: 'StusPage', component: Stuspage, meta: { islogin: true } },
+                { path: 'subjectList', component: subjectList, meta: { islogin: true } },
+                { path: 'testShop', component: testShop, meta: { islogin: true } },
+                { path: 'AddStu_Info', component: AddStu_Info, meta: { islogin: true } },
+                { path: 'EditStu_Info', component: EditStu_Info, meta: { islogin: true } },
+                { name: 'home', path: '/StusPage', component: Stuspage, redirect: '/StusPage', meta: { islogin: true } }
+            ]
+
+        },
+
     ]
 })
 // 导出

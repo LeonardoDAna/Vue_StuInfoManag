@@ -11,12 +11,11 @@ export default {
                 answer:'',
                 
             }
-        ]
+        ],
     },
     getter:{
 
     },
     mutations:{
-
     }
 }

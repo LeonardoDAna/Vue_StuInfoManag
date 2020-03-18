@@ -1,32 +1,32 @@
 const path = require('path');
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const HtmlWebpackPlugin =require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-    entry:'./main.js',
-    output:{
-        filename:'bundle.js',
-        path: path.resolve(__dirname,'dist')
+    entry: './main.js',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
     },
-    devServer:{
-        contentBase:'./dist',
-        hot:true
+    devServer: {
+        contentBase: './dist',
+        hot: true
 
     },
     plugins: [
         new VueLoaderPlugin(),
         // new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-          title: 'Hot Module Replacement',
-          template: path.join(__dirname, 'index.html'),  //指定模板页面，将来会根据指定的页面路径，去生成内存中的页面
-          filename: 'index.html'   //指定生成页面的名称
+            title: 'Hot Module Replacement',
+            template: path.join(__dirname, 'index.html'),  //指定模板页面，将来会根据指定的页面路径，去生成内存中的页面
+            filename: 'index.html'   //指定生成页面的名称
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
-        ],
-    module:{
+    ],
+    module: {
         rules: [ // 就是这些 非 JS 文件 和 loader 之间的对应关系
             { test: /\.css$/, use: ['style-loader', 'css-loader'] }, // 创建处理 css 文件的 loader 匹配规则
             { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] }, // 配置处理less文件的规则
@@ -38,6 +38,6 @@ module.exports = {
             { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }, // 添加转换JS文件的loader，其中，必须把 node_modules 目录设置为 排除项，这样，在打包的时候，会忽略node_modules 目录下的所有JS文件；否则项目运行不起来！
             { test: /\.vue$/, use: 'vue-loader' }, // 解析Vue组件的第三方loader
             { test: /\.ttf|woff|woff2|eot|svg$/, use: 'url-loader' }, // 处理 样式中字体文件路径的问题
-          ]
+        ]
     }
 }

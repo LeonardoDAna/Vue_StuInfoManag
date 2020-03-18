@@ -12,7 +12,7 @@
         text-color="#fff"
         active-text-color="#ffd04b"
       >
-        <el-menu-item index="1" @click="$router.push('/')">首页</el-menu-item>
+        <el-menu-item index="1" @click="$router.push('/home')">首页</el-menu-item>
         <el-menu-item index="2">处理中心</el-menu-item>
         <el-submenu index="3">
           <template slot="title">我的工作台</template>
@@ -32,6 +32,22 @@
         </el-menu-item>
       </el-menu>
     </div>
+    <div class="usericon">
+      <el-dropdown @command="handleCommand">
+        <span class="el-dropdown-link">
+          <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+          <!-- <i class="el-icon-arrow-down el-icon--right"></i> -->
+        </span>
+        <el-dropdown-menu slot="dropdown" >
+          <!-- <el-dropdown-item></el-dropdown-item> -->
+          <el-dropdown-item>更改密码</el-dropdown-item>
+          <el-dropdown-item>个人信息</el-dropdown-item>
+          <el-dropdown-item>账号设置</el-dropdown-item>
+          <el-dropdown-item command="/">退出登入</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <!-- <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar> -->
+    </div>
   </div>
 </template>
 <script>
@@ -46,7 +62,11 @@ export default {
   created() {
     // this.isCheckedBox()
   },
-  methods: {}
+  methods: {
+    handleCommand:function(command){
+      this.$router.push(command)
+    },
+  }
 };
 </script>
 <style lang="css">
@@ -59,5 +79,10 @@ export default {
 }
 .navbar {
   float: left;
+}
+.usericon {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
 }
 </style>

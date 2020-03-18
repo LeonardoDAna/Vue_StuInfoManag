@@ -32,6 +32,18 @@ Vue.use(vueAxios, axios)
 window.$ = $
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
+router.beforeEach((to,form,next)=>{
+    if(to.meta.islogin){
+        if(sessionStorage){
+            next()
+        }else{
+            next('/')
+        }
+    }else{
+        next()
+    }
+})
+
 const xm = new Vue({
     el: '#app',
     render: h => h(app),

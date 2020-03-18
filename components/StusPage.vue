@@ -2,7 +2,7 @@
   <div class="StusPage">
     <el-button
       type="primary"
-      @click="$router.push('AddStu_Info')"
+      @click="$router.push('home/AddStu_Info')"
       style="margin-top:10px;margin-bottom:35px;"
     >添加学生</el-button>
     <div class="stu_tab">

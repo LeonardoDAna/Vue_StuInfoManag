@@ -25,7 +25,7 @@
             show-word-limit></el-input>
         </el-form-item>
         <el-form-item>
-            <router-link to="/StusPage">
+            <router-link to="home//StusPage">
                 <el-button type="primary" @click="editStuInfo(a)">提交信息</el-button>
             </router-link>
          </el-form-item>
