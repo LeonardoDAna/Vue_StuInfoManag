@@ -1,7 +1,7 @@
 <template>
   <div class="listview">
     <div style="display:flex">
-      <el-button @click="$router.push('/addsubject')">新建题目</el-button>
+      <el-button @click="$router.push('/home/addsubject')">新建题目</el-button>
     </div>
     <div class="subjectList" v-for="(item,j) in subject" :key="item.id">
       <h2>[{{fmtSubjectType(item.questionType )}}] {{item.title}}</h2>

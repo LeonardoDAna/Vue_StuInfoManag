@@ -29,10 +29,10 @@
             prefix-icon="el-icon-s-goods"
           ></el-input>
         </el-form-item>
-        <el-form-item style="text-align:center" class="admainInput" label-width="60px">
-          <el-button type="primary" @click="submitForm(ruleForm)">提交</el-button>
-          <el-button @click="resetForm('ruleForm')">重置</el-button>
-        </el-form-item>
+        <div class="adminbtn">
+          <el-button style="margin-left:40px" type="primary" @click="submitForm(ruleForm)">提交</el-button>
+          <el-button style="margin-left:40px" @click="resetForm('ruleForm')">重置</el-button>
+        </div>
       </el-form>
     </div>
   </div>
@@ -103,5 +103,9 @@ body {
   color: white;
   text-align: center;
   font-size: 27px;
+}
+.adminbtn {
+display: flex;
+justify-content: center;
 }
 </style>

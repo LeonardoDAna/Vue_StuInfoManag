@@ -73,7 +73,7 @@
           <el-input type="textarea" v-model="subject.desc"></el-input>
         </el-form-item>
         <el-form-item>
-          <router-link to="/subjectList">
+          <router-link to="/home/subjectList">
             <el-button type="primary" @click="submitList()">提交</el-button>
           </router-link>
           <el-button @click="addOption()" :disabled="this.changeDisabled">增加选项</el-button>

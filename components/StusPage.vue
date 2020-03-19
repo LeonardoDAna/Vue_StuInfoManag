@@ -2,7 +2,7 @@
   <div class="StusPage">
     <el-button
       type="primary"
-      @click="$router.push('home/AddStu_Info')"
+      @click="$router.push('/home/AddStu_Info')"
       style="margin-top:10px;margin-bottom:35px;"
     >添加学生</el-button>
     <div class="stu_tab">
@@ -14,7 +14,7 @@
         <el-table-column label="班级" prop="class_"></el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <router-link to="/EditStu_Info">
+            <router-link to="/home/EditStu_Info">
               <el-button size="small" @click="handleClick(scope.row.ID)">编辑</el-button>
             </router-link>
             <el-button size="small" @click="refresh(scope.row.ID)">删除</el-button>
